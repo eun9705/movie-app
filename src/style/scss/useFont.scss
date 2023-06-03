@@ -1,0 +1,13 @@
+@mixin font-face($name, $file, $weight: 400) {
+    @font-face {
+        font-family: "#{$name}";
+        src: url('/src/fonts/#{$file}.otf') format('otf'),
+        url('/src/fonts/#{$file}.otf') format('opentype');
+        font-weight: $weight;
+    }
+}
+
+@include font-face("NotoSans","NotoSansKR-Black",900);
+@include font-face("NotoSans","NotoSansKR-Bold",700);
+@include font-face("NotoSans","NotoSansKR-Medium",500);
+@include font-face("NotoSans","NotoSansKR-Regular");
