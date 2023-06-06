@@ -1,0 +1,4 @@
+@import './globalStyle';
+.movie-main {
+    @include flex-box(column);width: 100vw;height: 100vh;
+}

@@ -1,2 +1,19 @@
 @import "./globalStyle";
-body { background-color: $main-color;font-family: 'NotoSans',sans-serif;color:$font-color;font-size: 50px; }
+html { font-size: 62.5%; }
+body { background-color: $main-color; }
+* { font-family: 'NotoSans',sans-serif;font-size:1.6rem;color: $font-color; }
+
+//header
+header { 
+    @include position-box($top:0);
+    ul { @include flex-box; }
+}
+
+//footer
+footer { 
+    @include position-box($left:0,$right:0,$bottom:2.5rem);margin:auto 0;text-align: center;
+    * { font-size:1.2rem;color: $sub-font-color; }
+    a {
+        &:hover { text-decoration: underline; }
+    }
+}

@@ -1,5 +1,25 @@
 //색깔 변수
 $main-color: #222;
 $font-color: #FFF;
+$sub-font-color: #777;
 
-//글꼴
+//폰트굵기
+$black: 900;
+$bold: 700;
+$medium: 500;
+
+//스타일 정의
+@mixin flex-box ($direction:row,$align:center,$justify:center) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin position-box ($position:absolute,$left:null,$right:null,$top:null,$bottom:null) {
+    position: $position;
+    left: $left;
+    right: $right;
+    top: $top;
+    bottom: $bottom;
+}
