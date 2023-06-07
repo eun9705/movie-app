@@ -1,7 +1,9 @@
+import SearchForm from "../Components/SearchForm";
+
 const MovieMain = () => {
     return <>
         <section className="movie-main">
-            영화 검색페이지
+            <SearchForm />
         </section>
     </>
 }
