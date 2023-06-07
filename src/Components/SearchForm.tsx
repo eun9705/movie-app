@@ -8,7 +8,6 @@ const SearchForm = () => {
         let searchTypeVal = e.target.searchType.value;
         let searchContextVal = e.target.searchContext.value;
         const res = await axios.get(`http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&detail=Y&${searchTypeVal}=${searchContextVal}&ServiceKey=${api_key}`);
-        console.log(res);
     }
     return <form onSubmit={submitHandler} className="search-form">
         <label htmlFor="search-type"></label>
