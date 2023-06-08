@@ -2,9 +2,9 @@ import SearchForm from "../Components/SearchForm";
 
 const MovieMain = () => {
     return <>
-        <section className="movie-main">
+        <div className="movie-main">
             <SearchForm />
-        </section>
+        </div>
     </>
 }
 

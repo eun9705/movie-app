@@ -1,13 +1,15 @@
 @import './globalStyle';
 .movie-main {
-    @include flex-box(column);width: 100vw;height: 100vh;
+    @include flex-box(column);width: 100vw;min-height: 100vh;
 }
 
 //검색창
 .search-form {
     @include flex-box($justify:space-between);height:5rem;
-    background-color: $white;border-radius:1rem;
-    * { background-color: transparent;color: $sub-font-color; }
-    select { width:15rem;padding:1rem; }
+    background-color:$white;border-radius:1rem;
+    * { background-color:transparent;color:$sub-font-color; }
+    select { width:15rem;padding:1rem;cursor:pointer; }
     input { width:50rem;padding:1rem; }
+    button { width:5rem;cursor:pointer; }
+    label { @include position-box($left:-999em); }
 }

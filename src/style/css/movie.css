@@ -13,7 +13,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .search-form {
@@ -41,8 +41,17 @@
 .search-form select {
   width: 15rem;
   padding: 1rem;
+  cursor: pointer;
 }
 .search-form input {
   width: 50rem;
   padding: 1rem;
+}
+.search-form button {
+  width: 5rem;
+  cursor: pointer;
+}
+.search-form label {
+  position: absolute;
+  left: -999em;
 }
