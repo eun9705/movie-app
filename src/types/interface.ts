@@ -3,7 +3,7 @@ export interface MovieData {
 }
 export interface MovieResult {
     Count: number;
-    TotalCount: number;
+    TotalCount?: number;
     Result: Array<MovieList>;
 }
 export interface MovieList {

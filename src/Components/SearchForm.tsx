@@ -1,6 +1,9 @@
 import { GoSearch } from 'react-icons/go';
 
 const SearchForm = ({submitHandler}:any) => {
+    const handlerKeyPress = (e:React.KeyboardEvent<HTMLInputElement>) => {
+        if(e.key === 'enter') submitHandler();
+    }
     // const [listProps,setListProps] = useState<MovieList[] | undefined>([]);
 
     // const submitHandler = async (e:React.ChangeEvent<HTMLFormElement>) => {
@@ -20,7 +23,7 @@ const SearchForm = ({submitHandler}:any) => {
                     <option value="director">감독</option>
                 </select>
                 <label htmlFor="searchContext">검색어입력</label>
-                <input type="text" placeholder="검색어를 입력해주세요." name="searchContext" required id="searchContext"/>
+                <input type="text" placeholder="검색어를 입력해주세요." name="searchContext" required id="searchContext" onKeyPress={handlerKeyPress}/>
                 <button type="submit">
                     <GoSearch />
                 </button>

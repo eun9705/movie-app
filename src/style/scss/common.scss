@@ -4,6 +4,7 @@ body { background-color: $main-color; }
 * { font-family: 'NotoSans',sans-serif;font-size:1.6rem;color: $white; }
 .container { width: 114rem; }
 .highlight { color: $sub-color; }
+.row-box { @include flex-box; }
 
 //header
 header { 

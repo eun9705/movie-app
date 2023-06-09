@@ -15,7 +15,7 @@ function App() {
                 <Header />
                 <Routes>
                     <Route path='/' element={<MovieMain />}/>
-                    <Route path='/detail' element={<MovieDetail />}/>
+                    <Route path='/detail/:movieId/:movieSeq' element={<MovieDetail />}/>
                 </Routes>
                 <Footer />
             </div>
