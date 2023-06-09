@@ -55,3 +55,20 @@ export interface MovieList {
     use:string;
     // vods:Array<vod>;
 }
+
+export interface FormElements extends HTMLFormControlsCollection {
+    searchType: HTMLSelectElement;
+    searchContext:HTMLInputElement
+}
+
+export interface FormSubmitProps extends HTMLFormElement {
+    readonly elements: FormElements;
+}
+
+export interface ListProps {
+    info: MovieList | undefined
+}
+
+// export interface FormSubmitProps extends HTMLFormElement {
+//     submitHandler: (event:React.FormEvent<HTMLFormElement>) => void;
+// }
