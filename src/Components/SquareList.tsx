@@ -1,15 +1,13 @@
-import { MovieList } from "../types/interface";
+import { ListProps } from "../types/interface";
+import nonePoster from '../images/no-poster.jpg'
+import { Link } from "react-router-dom";
 
-type ListProps = {
-    listProps: MovieList[] | undefined
-}
-const SquareList = ({listProps} : ListProps)  => {
+const SquareList = ({info}: ListProps)  => {
     return (
-        <ul>
-            {listProps?.map(({title},idx)=>{
-                return <li key={idx}>{title}</li>
-            })}
-        </ul>
+        <Link to='/detail' className="card">
+            <img src={info?.posters ? info?.posters.split('|')[0] : nonePoster} alt="영화포스터" />
+            <h4>{info?.title.replace(/!HE|!HS/ig,'')}</h4>
+        </Link>
     )
 }
 

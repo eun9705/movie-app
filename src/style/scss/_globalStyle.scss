@@ -1,5 +1,6 @@
 //색깔 변수
 $main-color: #222;
+$sub-color: #534cbf;
 $white: #FFF; //main-font-color
 $sub-font-color: #777;
 
@@ -22,4 +23,12 @@ $medium: 500;
     right: $right;
     top: $top;
     bottom: $bottom;
+}
+
+@mixin cut-text {
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
 }

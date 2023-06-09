@@ -2,6 +2,8 @@
 html { font-size: 62.5%; }
 body { background-color: $main-color; }
 * { font-family: 'NotoSans',sans-serif;font-size:1.6rem;color: $white; }
+.container { width: 114rem; }
+.highlight { color: $sub-color; }
 
 //header
 header { 
@@ -11,7 +13,7 @@ header {
 
 //footer
 footer { 
-    @include position-box($left:0,$right:0,$bottom:2.5rem);margin:auto 0;text-align:center;
+    text-align:center;margin:5rem 0;
     * { font-size:1.2rem;color:$sub-font-color; }
     a {
         &:hover { text-decoration:underline; }

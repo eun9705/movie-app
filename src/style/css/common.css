@@ -12,6 +12,14 @@ body {
   color: #FFF;
 }
 
+.container {
+  width: 114rem;
+}
+
+.highlight {
+  color: #534cbf;
+}
+
 header {
   position: absolute;
   top: 0;
@@ -33,12 +41,8 @@ header ul {
 }
 
 footer {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 2.5rem;
-  margin: auto 0;
   text-align: center;
+  margin: 5rem 0;
 }
 footer * {
   font-size: 1.2rem;
