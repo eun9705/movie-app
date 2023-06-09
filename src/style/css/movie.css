@@ -23,8 +23,7 @@
   font-size: 10rem;
   font-weight: 900;
 }
-
-.main-wrapper {
+.movie-main .main-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -65,7 +64,6 @@
   opacity: 0.8;
 }
 .search-form * {
-  background-color: transparent;
   color: #777;
 }
 .search-form select {
@@ -94,10 +92,67 @@
 }
 
 .card-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 10rem 0;
 }
+.card-box .result-text {
+  display: inline-block;
+  width: 100%;
+}
 .card-box hr {
+  width: 100%;
   margin: 1.5rem 0 5rem;
+}
+.card-box .card-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 100px 1%;
+  width: 100%;
+  min-height: 20rem;
+}
+.card-box .card-wrapper .card {
+  width: 19.2%;
+}
+.card-box .card-wrapper h4 {
+  margin-top: 1rem;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  font-weight: 400;
+}
+.card-box .card-wrapper img {
+  width: 100%;
+  height: 315px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.5rem;
 }
 .card-box .text-wrapper {
   width: 100%;
@@ -116,8 +171,15 @@
   font-size: 2rem;
   font-weight: 500;
 }
+.card-box .more-btn {
+  width: 20rem;
+  height: 5rem;
+  margin-top: 10rem;
+  border: 1px solid #FFF;
+  cursor: pointer;
+}
 
-.card-wrapper {
+.detail-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -125,33 +187,27 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  margin: 10rem 0;
+}
+.detail-box img {
+  width: 300px;
+  margin-right: 10rem;
+  border-radius: 1.5rem;
+  -webkit-filter: drop-shadow(5px 5px 8px rgba(0, 0, 0, 0.8));
+          filter: drop-shadow(5px 5px 8px rgba(0, 0, 0, 0.8));
+}
+.detail-box .row-box {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 100px 1%;
-  min-height: 20rem;
-}
-.card-wrapper .card {
-  width: 19.2%;
-}
-.card-wrapper h4 {
-  margin-top: 1rem;
-  display: inline-block;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 100%;
-  font-weight: 400;
-}
-.card-wrapper img {
-  width: 100%;
-  height: 315px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 0.5rem;
 }

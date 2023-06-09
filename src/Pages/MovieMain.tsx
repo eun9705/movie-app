@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FormSubmitProps, MovieList } from "../types/interface";
 import { getMovieResApi } from "../api/serviceApi";
 import SearchForm from "../Components/SearchForm";
@@ -8,6 +8,10 @@ const MovieMain = () => {
     const [viewCount,setViewCount] = useState<boolean>(false);
     const [totalCount,setTotalCount] = useState<number | undefined>(0);
     const [listProps,setListProps] = useState<MovieList[] | undefined>([]);
+
+    useEffect(()=>{
+        sessionStorage.removeItem('searchContext');
+    },[]);
 
     const submitHandler = async (e:React.FormEvent<FormSubmitProps>) => {
         e.preventDefault();
@@ -19,6 +23,7 @@ const MovieMain = () => {
         setTotalCount(result?.TotalCount);
         setListProps(result?.Result);
     }
+    
     return <>
         <div className="movie-main">
             <div className="main-wrapper">
@@ -36,7 +41,7 @@ const MovieMain = () => {
             </div>
             {viewCount && 
                 <div className='card-box container'>
-                    <strong>검색결과({totalCount})</strong>
+                    <strong className='result-text'>검색결과({totalCount})</strong>
                     <hr />
                     <div className="card-wrapper">
                         {totalCount !==0 ? 
@@ -52,6 +57,7 @@ const MovieMain = () => {
                             </div>
                         }
                     </div>
+                    {(totalCount && totalCount > 10) && <button className='more-btn'>View More +</button>}
                 </div>
             }
         </div>
