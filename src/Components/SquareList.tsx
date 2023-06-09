@@ -4,7 +4,7 @@ import nonePoster from '../images/no-poster.jpg'
 
 const SquareList = ({info}: ListProps)  => {
     return (
-        <Link to={`/detail/${info?.movieId}/${info?.movieSeq}`} className="card">
+        <Link to={`/detail/${info?.movieId}/${info?.movieId}/${info?.movieSeq}`} className="card">
             <img src={info?.posters ? info?.posters.split('|')[0] : nonePoster} alt="영화포스터" />
             <h4>{info?.title.replace(/!HE|!HS/ig,'')}</h4>
         </Link>
