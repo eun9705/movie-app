@@ -1,16 +1,6 @@
 import { GoSearch } from 'react-icons/go';
 
 const SearchForm = ({submitHandler}:any) => {
-    // const [listProps,setListProps] = useState<MovieList[] | undefined>([]);
-
-    // const submitHandler = async (e:React.ChangeEvent<HTMLFormElement>) => {
-    //     e.preventDefault();
-    //     let searchTypeVal = e.target.searchType.value;
-    //     let searchContextVal = e.target.searchContext.value;
-    //     const result = await getMovieResApi(searchTypeVal,searchContextVal);
-    //     setListProps(result);
-    // }
-
     return (
         <>
             <form onSubmit={submitHandler} className="search-form">
@@ -25,11 +15,6 @@ const SearchForm = ({submitHandler}:any) => {
                     <GoSearch />
                 </button>
             </form>
-            {/* <div className="card-wrapper">
-                {listProps?.map((info,idx)=>{
-                    return <SquareList info={info} key={idx}/>
-                })}
-            </div> */}
         </>
     )
 }
