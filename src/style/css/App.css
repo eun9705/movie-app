@@ -1,3 +1,5 @@
 @import './reset.css';
+@import 'swiper/swiper.min.css';
+@import 'swiper/css/navigation';
 @import './common.css';
 @import './movie.css';

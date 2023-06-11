@@ -1,46 +1,53 @@
+import {Dispatch,SetStateAction} from 'react';
+
 export interface MovieData {
     Data: Array<MovieResult>;
 }
 export interface MovieResult {
-    Count: number;
-    TotalCount?: number;
+    TotalCount: number;
     Result: Array<MovieList>;
 }
 export interface MovieList {
+    actors:ActorsObj;
+    directors:DirectorsObj;
     genre:string;
     keywords:string;
     kmdbUrl:string;
-    modDate:string;
     movieId:string;
     movieSeq:string;
     nation:string;
-    openThtr:string;
+    plots:PlotsObj;
     posters:string;
-    prodYear:string;
-    ratedYn:string;
     rating:string;
-    regDate:string;
-    repRatDate:string;
     repRlsDate:string;
     runtime:string;
-    salesAcc:string;
-    screenArea:string;
-    screenCnt:string;
-    soundtrack:string;
-    statDate:string;
-    statSouce:string;
     stlls:string;
-    themeSong:string;
     title:string;
     titleEng:string;
     titleEtc:string;
     titleOrg:string;
     type:string;
-    use:string;
+}
+
+export interface DirectorsObj {
+    director: Array<Director>;
+}
+
+export interface Director {
+    directorEnNm:string;
+    directorNm:string;
+}
+
+export interface PlotsObj {
+    plot: [{plotText:string}];
+}
+
+export interface ActorsObj {
+    actor: [{actorNm:string}];
 }
 
 export interface FormElements extends HTMLFormControlsCollection {
-    searchType: HTMLSelectElement;
+    searchType:HTMLSelectElement;
     searchContext:HTMLInputElement
 }
 
@@ -50,4 +57,12 @@ export interface FormSubmitProps extends HTMLFormElement {
 
 export interface ListProps {
     info: MovieList | undefined
+}
+
+export interface SearchFormProps {
+    submitFn: any;
+    searchType:string;
+    setSearchType: Dispatch<SetStateAction<string>>;
+    searchContext:string;
+    setSearchContext: Dispatch<SetStateAction<string>>;
 }
