@@ -45,7 +45,56 @@
 
 //상세보기
 .detail-box {
-    @include flex-box($align:flex-start);height:100vh;margin:10rem 0;
-    img { width: 300px;margin-right:10rem;border-radius: 1.5rem;filter: drop-shadow(5px 5px 8px rgba(0,0,0,0.8)); }
-    .row-box { align-items:flex-start;justify-content: flex-start; }
+    @include flex-box($align:flex-start);margin:10rem 0;
+    .row-box { 
+        align-items:flex-start;justify-content: flex-start;width:100%; 
+        .text-wrapper { 
+            @include flex-box(column,flex-start,flex-start);width: calc(100% - 40rem); 
+            button { 
+                @include flex-box;align-self: flex-end;height:3rem;margin-bottom:2rem;cursor: pointer;
+                svg { width:2.5rem;height:2.5rem;margin-right: 1rem; }
+            }
+            hr { width: 100%; }
+        }
+        > img { width: 30rem;margin-right:10rem;margin-top:5rem;border-radius: 1.5rem;filter: drop-shadow(5px 5px 8px rgb(0,0,0)); }
+    }
+    h2 { font-size: 4rem; }
+    .info-list {
+        li {
+            color: $sub-font-color;
+            &::after { content: 'ㆍ';margin:0 5px; }
+            &:last-child {
+                &::after { content: ''; }
+            }
+        }
+    }
+    hr { margin: 2rem 0; }
+    strong { font-size: 1.8rem;}
+    .info-wrapper{ 
+        margin: 1.5rem 0;
+        .row-box { 
+            margin: 1rem 0; 
+            > ul { 
+                width:50rem;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;overflow: hidden;
+                &.on { -webkit-line-clamp:unset; }
+                li { display:inline; }
+            }
+        }
+        span { display:inline-block;width:8rem;color: $sub-font-color; }
+        .basic-btn { margin-left:8rem; }
+    }
+    .content-wrapper { 
+        margin: 10rem 0;
+        h3 { font-size: 2.4rem; }
+        p { word-wrap: break-word;white-space:pre-wrap; }
+        .poster-slide {
+            img { width:25rem;height:35rem;object-fit: cover; }
+        }
+    }
+    .swiper-slide { @include flex-box;}
+    .swiper-button-prev,.swiper-button-next {color:$white; }
+    .link-btn{ 
+        @include flex-box;width:100%;height:7rem;background-color:$sub-color;font-size:2rem;font-weight:500; 
+        svg { width:2.5rem;height:2.5rem;margin-left: 1rem; }
+    }
 }

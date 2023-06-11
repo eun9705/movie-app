@@ -36,6 +36,14 @@ body {
           justify-content: center;
 }
 
+.basic-btn {
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  background-color: #534cbf;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
 header {
   position: absolute;
   top: 0;

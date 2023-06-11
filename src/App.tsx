@@ -1,10 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
 import Header from './Components/Header';
 import MovieMain from './Pages/MovieMain';
 import MovieDetail from './Pages/MovieDetail';
 import Footer from './Components/Footer';
-
 import './style/css/App.css';
 
 

@@ -5,6 +5,7 @@ body { background-color: $main-color; }
 .container { width: 114rem; }
 .highlight { color: $sub-color; }
 .row-box { @include flex-box; }
+.basic-btn { padding:.7rem 1rem;border-radius:.5rem;background-color:$sub-color;font-size: 1.4rem;cursor: pointer; }
 
 //header
 header { 

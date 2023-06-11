@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .movie-main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -193,15 +194,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 100vh;
   margin: 10rem 0;
-}
-.detail-box img {
-  width: 300px;
-  margin-right: 10rem;
-  border-radius: 1.5rem;
-  -webkit-filter: drop-shadow(5px 5px 8px rgba(0, 0, 0, 0.8));
-          filter: drop-shadow(5px 5px 8px rgba(0, 0, 0, 0.8));
 }
 .detail-box .row-box {
   -webkit-box-align: start;
@@ -210,4 +203,162 @@
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  width: 100%;
+}
+.detail-box .row-box .text-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: calc(100% - 40rem);
+}
+.detail-box .row-box .text-wrapper button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  height: 3rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+.detail-box .row-box .text-wrapper button svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 1rem;
+}
+.detail-box .row-box .text-wrapper hr {
+  width: 100%;
+}
+.detail-box .row-box > img {
+  width: 30rem;
+  margin-right: 10rem;
+  margin-top: 5rem;
+  border-radius: 1.5rem;
+  -webkit-filter: drop-shadow(5px 5px 8px rgb(0, 0, 0));
+          filter: drop-shadow(5px 5px 8px rgb(0, 0, 0));
+}
+.detail-box h2 {
+  font-size: 4rem;
+}
+.detail-box .info-list li {
+  color: #777;
+}
+.detail-box .info-list li::after {
+  content: "ㆍ";
+  margin: 0 5px;
+}
+.detail-box .info-list li:last-child::after {
+  content: "";
+}
+.detail-box hr {
+  margin: 2rem 0;
+}
+.detail-box strong {
+  font-size: 1.8rem;
+}
+.detail-box .info-wrapper {
+  margin: 1.5rem 0;
+}
+.detail-box .info-wrapper .row-box {
+  margin: 1rem 0;
+}
+.detail-box .info-wrapper .row-box > ul {
+  width: 50rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.detail-box .info-wrapper .row-box > ul.on {
+  -webkit-line-clamp: unset;
+}
+.detail-box .info-wrapper .row-box > ul li {
+  display: inline;
+}
+.detail-box .info-wrapper span {
+  display: inline-block;
+  width: 8rem;
+  color: #777;
+}
+.detail-box .info-wrapper .basic-btn {
+  margin-left: 8rem;
+}
+.detail-box .content-wrapper {
+  margin: 10rem 0;
+}
+.detail-box .content-wrapper h3 {
+  font-size: 2.4rem;
+}
+.detail-box .content-wrapper p {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+.detail-box .content-wrapper .poster-slide img {
+  width: 25rem;
+  height: 35rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.detail-box .swiper-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.detail-box .swiper-button-prev, .detail-box .swiper-button-next {
+  color: #FFF;
+}
+.detail-box .link-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 7rem;
+  background-color: #534cbf;
+  font-size: 2rem;
+  font-weight: 500;
+}
+.detail-box .link-btn svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-left: 1rem;
 }
