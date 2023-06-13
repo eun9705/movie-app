@@ -11,7 +11,7 @@ const ContentDetail  = ({info}: ListProps) => {
     const [viewAll,setViewAll] = useState<boolean>(false);
     return (
         <div className="detail-wrapper">
-            <div className="row-box">
+            <div className="row-box first">
                 <img src={info?.posters ? info?.posters.split('|')[0] : nonePoster} alt="영화포스터" />
                 <div className="text-wrapper">
                     <button onClick={()=>navigation(-1)}>
@@ -68,6 +68,9 @@ const ContentDetail  = ({info}: ListProps) => {
                         slideShadows: true,
                     }}
                     navigation
+                    breakpoints={{
+                        375:{ slidesPerView:2}
+                    }}
                 >
                     {info?.posters.split('|').map((item,idx)=>{
                         return <SwiperSlide className="poster-slide" key={idx}>

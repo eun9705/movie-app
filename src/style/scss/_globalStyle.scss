@@ -9,6 +9,37 @@ $black: 900;
 $bold: 700;
 $medium: 500;
 
+//breakPoint
+$break-desktop: 1440px;
+$break-tablet-large: 1180px;
+$break-tablet-small: 820px;
+$break-mobile: 415px;
+
+//미디어쿼리
+@mixin desktop {
+    @media (max-width: #{$break-desktop}) {
+      @content;
+    }
+}
+
+@mixin tablet-large {
+    @media (max-width: #{$break-tablet-large}) {
+      @content;
+    }
+}
+
+@mixin tablet-small {
+    @media (max-width: #{$break-tablet-small}) {
+      @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$break-mobile}) {
+      @content;
+    }
+}
+
 //스타일 정의
 @mixin flex-box ($direction:row,$align:center,$justify:center) {
     display: flex;
@@ -30,5 +61,5 @@ $medium: 500;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    width: 100%;
+    width: 90%;
 }

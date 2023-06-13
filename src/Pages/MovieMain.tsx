@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate,useParams } from 'react-router-dom';
 import { FormSubmitProps, MovieList } from "../types/interface";
 import { getMovieResApi } from "../api/serviceApi";
 import SearchForm from "../Components/SearchForm";
@@ -8,30 +8,33 @@ import SquareList from '../Components/SquareList';
 const MovieMain = () => {
     const [searchType,setSearchType] = useState<string>('title');
     const [searchContext,setSearchContext] = useState<string>('');
-    const [viewCount,setViewCount] = useState<boolean>(false);
     const [totalCount,setTotalCount] = useState<number | undefined>(0);
     const [listProps,setListProps] = useState<MovieList[] | undefined>([]);
-    const [searchParams,setSearchParams] = useSearchParams();
+    const { keyword,context } = useParams() as { keyword:string;context: string};
+    
     const navigation = useNavigate();
-    const keyword = searchParams.get('keyword')!;
-    const context = searchParams.get('context')!;
 
-    const submitHandler = async (e:React.FormEvent<FormSubmitProps>) => {
-        e.preventDefault();
-        setSearchParams({keyword:searchType,context:searchContext});
-        navigation(`/?keyword=${searchType}&context=${searchContext}`);
-        const result = await getMovieResApi(searchType,searchContext);
-        setViewCount(true);
+    const startApi = async (selectVal:string,inputVal:string) => {
+        const result = await getMovieResApi(selectVal,inputVal);
         setTotalCount(result?.TotalCount);
         setListProps(result?.Result);
     }
 
+    const submitHandler = async (e:React.FormEvent<FormSubmitProps>) => {
+        e.preventDefault();
+        navigation(`/${searchType}/${searchContext}`);
+        startApi(searchType,searchContext);
+    }
+
+    const checkState = async () => {
+        setSearchType(keyword);
+        setSearchContext(context);
+    }
+
     const searchHistory = async () => {
         if(keyword && context) {
-            const result = await getMovieResApi(keyword,context);
-            setViewCount(true);
-            setTotalCount(result?.TotalCount);
-            setListProps(result?.Result);
+            await checkState();
+            startApi(searchType,searchContext);
         }  
     }
 
@@ -55,7 +58,7 @@ const MovieMain = () => {
                     <SearchForm submitFn={submitHandler} searchType={searchType} setSearchType={setSearchType} searchContext={searchContext} setSearchContext={setSearchContext}/>
                 </div>
             </div>
-            {viewCount &&
+            {(keyword && context) &&
                 <div className='card-box container'>
                     <strong className='result-text'>검색결과({totalCount})</strong>
                     <hr />

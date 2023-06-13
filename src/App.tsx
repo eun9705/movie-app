@@ -13,6 +13,7 @@ function App() {
                 <Header />
                 <Routes>
                     <Route path='/' element={<MovieMain />}/>
+                    <Route path='/:keyword/:context' element={<MovieMain />}/>
                     <Route path='/detail/:movieId/:movieSeq' element={<MovieDetail />}/>
                 </Routes>
                 <Footer />
