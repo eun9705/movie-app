@@ -22,15 +22,19 @@ const MovieMain = () => {
 
     const submitHandler = async (e:React.FormEvent<FormSubmitProps>) => {
         e.preventDefault();
-        console.log('??');
         navigation(`/${searchType}/${searchContext}`);
         startApi(searchType,searchContext);
     }
 
+    const checkState = async () => {
+        setSearchType(keyword);
+        setSearchContext(context);
+    }
+
     const searchHistory = async () => {
         if(keyword && context) {
-
-            startApi(keyword,context);
+            await checkState();
+            startApi(searchType,searchContext);
         }  
     }
 

@@ -2,7 +2,7 @@
 html { font-size: 62.5%; }
 body { background-color: $main-color; }
 * { font-family: 'NotoSans',sans-serif;font-size:1.6rem;color: $white; }
-.container { width: 114rem; }
+.container { width: 65.3vw; }
 .highlight { color: $sub-color; }
 .row-box { @include flex-box; }
 .basic-btn { padding:.7rem 1rem;border-radius:.5rem;background-color:$sub-color;font-size: 1.4rem;cursor: pointer; }
@@ -20,4 +20,22 @@ footer {
     a {
         &:hover { text-decoration:underline; }
     }
+}
+
+@include tablet-large {
+    * { font-size: 1.4rem; }
+    .container { width:75vw; }
+    .basic-btn { font-size: 1.2rem; }
+    .pc-only { display:none; }
+}
+
+@include tablet-small {
+    * { font-size: 1.2rem; }
+    footer { 
+        * { font-size: 1rem; }
+    }
+}
+
+@include mobile {
+    * { font-size: 1rem; }
 }
