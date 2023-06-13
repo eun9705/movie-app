@@ -69,7 +69,8 @@ const ContentDetail  = ({info}: ListProps) => {
                     }}
                     navigation
                     breakpoints={{
-                        375:{ slidesPerView:2}
+                        820: { slidesPerView:5 },
+                        375:{ slidesPerView:2 }
                     }}
                 >
                     {info?.posters.split('|').map((item,idx)=>{
