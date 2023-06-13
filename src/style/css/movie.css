@@ -43,6 +43,8 @@
 }
 .movie-main .title-box h1 {
   margin: -2.5rem 0 0.5rem -0.7rem;
+}
+.movie-main .title-box .highlight {
   font-size: 10rem;
   font-weight: 900;
 }
@@ -386,7 +388,7 @@
   .movie-main .main-wrapper {
     height: 45rem;
   }
-  .movie-main .title-box h1 {
+  .movie-main .title-box .highlight {
     font-size: 8.5rem;
   }
   .search-form {
@@ -456,7 +458,7 @@
   .movie-main .main-wrapper {
     height: 35rem;
   }
-  .movie-main .title-box h1 {
+  .movie-main .title-box .highlight {
     margin-top: -2rem;
     font-size: 6.5rem;
   }
@@ -498,7 +500,7 @@
   .movie-main .main-wrapper {
     height: 30rem;
   }
-  .movie-main .title-box h1 {
+  .movie-main .title-box .highlight {
     margin: -10px 0 5px -2px;
     font-size: 4rem;
   }

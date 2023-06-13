@@ -4,6 +4,7 @@ import { FormSubmitProps, MovieList } from "../types/interface";
 import { getMovieResApi } from "../api/serviceApi";
 import SearchForm from "../Components/SearchForm";
 import SquareList from '../Components/SquareList';
+import { Link } from 'react-router-dom';
 
 const MovieMain = () => {
     const [searchType,setSearchType] = useState<string>('title');
@@ -49,7 +50,7 @@ const MovieMain = () => {
                 <div className="container">
                     <div className="title-box">
                         <span>Korean Movie Database</span>
-                        <h1 className='highlight'>KMDb</h1>
+                        <h1 className='highlight'><Link to="/" className='highlight'>KMDb</Link></h1>
                         <p>
                             한국영화데이터베이스의 Open API를 활용하여 제작한 사이트입니다.<br />
                             제목, 감독 옵션을 선택하여 검색할 수 있습니다.
