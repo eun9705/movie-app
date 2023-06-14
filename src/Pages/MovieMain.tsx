@@ -27,16 +27,8 @@ const MovieMain = () => {
         startApi(searchType,searchContext);
     }
 
-    const checkState = async () => {
-        setSearchType(keyword);
-        setSearchContext(context);
-    }
-
     const searchHistory = async () => {
-        if(keyword && context) {
-            await checkState();
-            startApi(searchType,searchContext);
-        }  
+        if(keyword && context) startApi(keyword,context);  
     }
 
     useEffect(()=>{
