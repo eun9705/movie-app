@@ -1,4 +1,4 @@
-import {Dispatch,SetStateAction} from 'react';
+import {Dispatch,SetStateAction,RefObject} from 'react';
 
 export interface MovieData {
     Data: Array<MovieResult>;
@@ -61,8 +61,6 @@ export interface ListProps {
 
 export interface SearchFormProps {
     submitFn: any;
-    searchType:string;
-    setSearchType: Dispatch<SetStateAction<string>>;
-    searchContext:string;
-    setSearchContext: Dispatch<SetStateAction<string>>;
+    inputRef:RefObject<HTMLInputElement>;
+    selectRef:RefObject<HTMLSelectElement>;
 }
