@@ -14,7 +14,7 @@ const errorHandler = (code:number) => {
     }
 }
 
-export const getMovieResApi = async (searchType:string,searchContext:string) => {
+export const getMovieResApi = async (searchType:string|undefined,searchContext:string|undefined) => {
     const api_key = process.env.REACT_APP_KMDB_KEY;
     // console.log(searchType,searchContext);
     // return;
