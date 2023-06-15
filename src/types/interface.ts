@@ -56,11 +56,23 @@ export interface FormSubmitProps extends HTMLFormElement {
 }
 
 export interface ListProps {
-    info: MovieList | undefined
+    info: MovieList[] | undefined;
+}
+
+export interface DetailProps {
+    info: MovieList | undefined;
 }
 
 export interface SearchFormProps {
     submitFn: any;
-    inputRef:RefObject<HTMLInputElement>;
-    selectRef:RefObject<HTMLSelectElement>;
+    selectVal:string;
+    setSelectVal:Dispatch<SetStateAction<string>>;
+    inputVal:string;
+    setInputVal:Dispatch<SetStateAction<string>>;
+}
+
+export interface MoreButtonProps {
+    totalCount:number | undefined;
+    page:number;
+    changePageNum:Dispatch<SetStateAction<number>>;
 }

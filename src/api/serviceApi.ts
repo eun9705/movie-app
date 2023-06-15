@@ -16,8 +16,6 @@ const errorHandler = (code:number) => {
 
 export const getMovieResApi = async (searchType:string|undefined,searchContext:string|undefined) => {
     const api_key = process.env.REACT_APP_KMDB_KEY;
-    // console.log(searchType,searchContext);
-    // return;
     try {
         const { data } = await axios.get<MovieData>(`http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&detail=Y&${searchType}=${searchContext}&ServiceKey=${api_key}&listCount=150`);
         return data.Data[0];

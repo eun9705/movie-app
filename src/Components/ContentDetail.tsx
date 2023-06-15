@@ -3,10 +3,10 @@ import { Link,useNavigate } from "react-router-dom";
 import { Navigation,EffectCoverflow } from 'swiper';
 import { Swiper,SwiperSlide } from "swiper/react";
 import { BsFillArrowLeftCircleFill,BsInfoCircleFill } from 'react-icons/bs';
-import { ListProps } from "../types/interface";
+import { DetailProps } from "../types/interface";
 import nonePoster from '../images/no-poster.jpg'
 
-const ContentDetail  = ({info}: ListProps) => {
+const ContentDetail  = ({info}: DetailProps) => {
     const navigation = useNavigate();
     const [viewAll,setViewAll] = useState<boolean>(false);
     return (

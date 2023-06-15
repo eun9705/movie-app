@@ -1,16 +1,17 @@
-import { useEffect, useState,useRef } from 'react';
-import { useNavigate,useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useNavigate,useParams,Link } from 'react-router-dom';
 import { FormSubmitProps, MovieList } from "../types/interface";
 import { getMovieResApi } from "../api/serviceApi";
 import SearchForm from "../Components/SearchForm";
 import SquareList from '../Components/SquareList';
-import { Link } from 'react-router-dom';
+import MoreButton from '../Components/MoreButton';
 
 const MovieMain = () => {
     const [totalCount,setTotalCount] = useState<number | undefined>(0);
     const [listProps,setListProps] = useState<MovieList[] | undefined>([]);
-    const inputRef = useRef<HTMLInputElement>(null);
-    const selectRef = useRef<HTMLSelectElement>(null);
+    const [currentPage,setCurrentPage] = useState<number>(1);
+    const [selectVal,setSelectVal] = useState<string>('title');
+    const [inputVal,setInputVal] = useState<string>('');
     const { keyword,context } = useParams() as { keyword:string;context: string};
     
     const navigation = useNavigate();
@@ -23,20 +24,34 @@ const MovieMain = () => {
 
     const submitHandler = async (e:React.FormEvent<FormSubmitProps>) => {
         e.preventDefault();
-        const selectVal = selectRef.current?.value;
-        const inputVal = inputRef.current?.value;
         navigation(`/${selectVal}/${inputVal}`);
-        startApi(selectVal,inputVal);
-    }
-
-    const searchHistory = async () => {
-        if(keyword && context) startApi(keyword,context);  
+        setCurrentPage(1);
     }
 
     useEffect(()=>{
-        searchHistory();
+        if(keyword && context) {
+            if(keyword !== selectVal || context !== inputVal) {
+                setSelectVal(keyword);
+                setInputVal(context);
+            }
+            startApi(keyword,context);  
+        }else {
+            setSelectVal('title');
+            setInputVal('');
+        }
     },[keyword,context]);
 
+    const currentList = (listProps:MovieList[] | undefined) => {
+        const indexOfLast = currentPage * 10;
+        let currentPosts:MovieList[]|undefined = [];
+        currentPosts = listProps?.slice(0, indexOfLast);
+        return currentPosts;
+    }
+
+    useEffect(()=>{
+        setCurrentPage(1);
+        currentList(listProps);
+    },[listProps]);
 
     return (
         <div className="movie-main">
@@ -50,7 +65,7 @@ const MovieMain = () => {
                             제목, 감독 옵션을 선택하여 검색할 수 있습니다.
                         </p>
                     </div>
-                    <SearchForm submitFn={submitHandler} inputRef={inputRef} selectRef={selectRef} />
+                    <SearchForm submitFn={submitHandler} selectVal={selectVal} setSelectVal={setSelectVal} inputVal={inputVal} setInputVal={setInputVal}/>
                 </div>
             </div>
             {(keyword && context) &&
@@ -58,20 +73,19 @@ const MovieMain = () => {
                     <strong className='result-text'>검색결과({totalCount})</strong>
                     <hr />
                     <div className="card-wrapper">
-                        {totalCount !==0 ? 
-                            listProps?.map((info,idx)=>{
-                                return <SquareList info={info} key={idx}/>
-                            }) :
+                        {totalCount! < 1 ? 
                             <div className='text-wrapper'>
-                                <strong><span className='highlight'>'{inputRef.current?.value}'</span>에 대한 검색결과 없음</strong>
+                                <strong><span className='highlight'>'{context}'</span>에 대한 검색결과 없음</strong>
                                 <p>
                                     단어의 철자가 정확한지 확인해 보세요.<br />
                                     검색 옵션을 변경해서 다시 검색해 보세요.
                                 </p>
                             </div>
+                            :
+                            <SquareList info={currentList(listProps)}/>
                         }
                     </div>
-                    {(listProps && listProps?.length > 10) && <button className='more-btn'>View More +</button>}
+                    {(listProps && listProps?.length > 10) && <MoreButton totalCount={totalCount} page={currentPage} changePageNum={setCurrentPage}/>}
                 </div>
             }
         </div>

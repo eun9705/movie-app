@@ -386,7 +386,7 @@
     --cardCount:4;
   }
   .movie-main .main-wrapper {
-    height: 45rem;
+    height: 47rem;
   }
   .movie-main .title-box .highlight {
     font-size: 8.5rem;
@@ -456,7 +456,7 @@
     --cardCount:3;
   }
   .movie-main .main-wrapper {
-    height: 35rem;
+    height: 45rem;
   }
   .movie-main .title-box .highlight {
     margin-top: -2rem;
@@ -498,7 +498,7 @@
     --cardCount:2;
   }
   .movie-main .main-wrapper {
-    height: 30rem;
+    height: 40rem;
   }
   .movie-main .title-box .highlight {
     margin: -10px 0 5px -2px;
