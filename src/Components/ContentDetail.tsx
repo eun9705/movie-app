@@ -43,7 +43,7 @@ const ContentDetail  = ({info}: DetailProps) => {
                                 })}
                             </ul>
                         </div>
-                        <button className="basic-btn" onClick={()=>{setViewAll(!viewAll)}}>{viewAll ? "닫기" : "더보기"}</button>
+                        <button className="detail-btn" onClick={()=>{setViewAll(!viewAll)}}>{viewAll ? "닫기" : "더보기"}</button>
                     </div>
                 </div> 
             </div>
@@ -51,6 +51,7 @@ const ContentDetail  = ({info}: DetailProps) => {
                 <h3>줄거리</h3>
                 <hr />
                 <p>{info?.plots?.plot[0].plotText.replace(/\./gm,"\n")}</p>
+                <button className="detail-btn">{viewAll ? "닫기" : "더보기"}</button>
             </div>
             <div className="content-wrapper">
                 <h3>포스터({info?.posters.split('|').length})</h3>

@@ -10,7 +10,7 @@ const MoreButton = ({totalCount,page,changePageNum}:MoreButtonProps) => {
     
     return (
         <>
-            {(totalPage > page) && <button className='more-btn' onClick={()=>{changePageNum(page + 1)}}>View More +</button>}
+            {(totalPage > page) && <button className='common-btn border' onClick={()=>{changePageNum(page + 1)}}>View More +</button>}
         </>
     )
 }
