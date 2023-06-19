@@ -103,6 +103,18 @@
     }
 }
 
+//잘못된 접근
+.not-found-main {
+    @include flex-box(column);height: 100vh;
+    strong { font-size: 5rem;font-weight: 900; }
+    p { margin:5rem 0 8rem;text-align: center;font-size: 2rem;font-weight: 500; }
+    button { 
+        width: 20rem;height: 5rem;margin:0 .5rem;cursor: pointer;
+        &.prev { background-color: $white;color:$sub-font-color; }
+        &.main { background-color: $sub-color;color: $white; }
+    }
+}
+
 @include tablet-large {
     :root {
         --cardCount:4;

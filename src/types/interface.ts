@@ -76,3 +76,7 @@ export interface MoreButtonProps {
     page:number;
     changePageNum:Dispatch<SetStateAction<number>>;
 }
+
+export interface ButtonName {
+    buttonName:string;
+}

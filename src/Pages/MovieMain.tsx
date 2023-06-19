@@ -12,7 +12,7 @@ const MovieMain = () => {
     const [currentPage,setCurrentPage] = useState<number>(1);
     const [selectVal,setSelectVal] = useState<string>('title');
     const [inputVal,setInputVal] = useState<string>('');
-    const { keyword,context } = useParams() as { keyword:string;context: string};
+    const { keyword,context } = useParams() as { keyword:string;context: string };
     
     const navigation = useNavigate();
 
