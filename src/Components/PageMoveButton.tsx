@@ -7,7 +7,7 @@ const PageMoveButton = ({buttonName}:ButtonName) => {
         if(type === 'prev') navigate(-1);
         else navigate('/');
     }
-    return <button className={`${buttonName}`} onClick={()=>pageMoveFn(buttonName)}>{(buttonName === 'prev') ? "이전" : "메인"}페이지</button>
+    return <button className={(buttonName === 'prev')?"common-btn basic" : "common-btn highlight"} onClick={()=>pageMoveFn(buttonName)}>{(buttonName === 'prev') ? "이전" : "메인"}페이지</button>
 };
 
 export default PageMoveButton;

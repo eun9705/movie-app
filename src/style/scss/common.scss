@@ -5,7 +5,12 @@ body { background-color: $main-color; }
 .container { width: 65.3vw; }
 .highlight { color: $sub-color; }
 .row-box { @include flex-box; }
-.basic-btn { padding:.7rem 1rem;border-radius:.5rem;background-color:$sub-color;font-size: 1.4rem;cursor: pointer; }
+.common-btn { 
+    width: 20rem;height: 5rem;
+    &.basic { background-color: $white;color: $sub-font-color; }
+    &.border { border: 1px solid $white;color: $white; }
+    &.highlight { background-color: $sub-color;color: $white; }
+}
 
 //header
 header { 
@@ -30,8 +35,8 @@ footer {
 @include tablet-large {
     * { font-size: 1.4rem; }
     .container { width:75vw; }
-    .basic-btn { font-size: 1.2rem; }
     .pc-only { display:none; }
+    .common-btn { width:18rem; }
     header {
         height: 8rem;padding: 0 4rem;
         * { font-size: 1.8rem; }
@@ -41,6 +46,7 @@ footer {
 
 @include tablet-small {
     * { font-size: 1.2rem; }
+    .common-btn { width:12rem; }
     header {
         * { font-size: 1.6rem; }
     }
