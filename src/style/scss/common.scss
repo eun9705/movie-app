@@ -15,12 +15,7 @@ body { background-color: $main-color; }
 //header
 header { 
     @include position-box($top:0);@include flex-box($justify:space-between);width:100%;height:11rem;padding: 0 5rem;
-    * { font-size: 2rem;font-weight: 700; }
     img { width: 8vw; }
-    ul { 
-        @include flex-box;
-        li { margin-left: 8rem; }
-    }
 }
 
 //footer
@@ -37,19 +32,12 @@ footer {
     .container { width:75vw; }
     .pc-only { display:none; }
     .common-btn { width:18rem; }
-    header {
-        height: 8rem;padding: 0 4rem;
-        * { font-size: 1.8rem; }
-        ul li { margin-left: 5rem; }
-    }
+    header { height: 8rem;padding: 0 4rem; }
 }
 
 @include tablet-small {
     * { font-size: 1.2rem; }
     .common-btn { width:12rem; }
-    header {
-        * { font-size: 1.6rem; }
-    }
     footer { 
         * { font-size: 1rem; }
     }
@@ -60,7 +48,5 @@ footer {
     header {
         padding: 2rem;
         img { width: 17vw; }
-        * { font-size: 1.2rem; }
-        ul li { margin-left: 3rem; }
     }
 }

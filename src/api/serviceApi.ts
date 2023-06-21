@@ -1,19 +1,6 @@
 import axios from "axios";
 import { MovieData } from "../types/interface";
 
-const errorHandler = (code:number) => {
-    switch(code) {
-        case 403:
-        case 404:
-            break;
-        case 500:
-        case 503:
-            break;
-        default:
-            break;
-    }
-}
-
 export const getMovieResApi = async (searchType:string|undefined,searchContext:string|undefined) => {
     const api_key = process.env.REACT_APP_KMDB_KEY;
     try {
@@ -21,7 +8,7 @@ export const getMovieResApi = async (searchType:string|undefined,searchContext:s
         return data.Data[0];
     }
     catch(error) {
-        //error 로직 추가 필요
+        window.location.href = 'http://localhost:3000/warn';
     }
 }
 
@@ -32,6 +19,6 @@ export const getMovieDetail = async (id:string,seq:string) => {
         return data.Data[0];
     }
     catch(error) {
-
+        window.location.href = 'http://localhost:3000/warn';
     }
 }

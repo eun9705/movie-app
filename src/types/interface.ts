@@ -1,4 +1,4 @@
-import {Dispatch,SetStateAction,RefObject} from 'react';
+import {Dispatch,SetStateAction} from 'react';
 
 export interface MovieData {
     Data: Array<MovieResult>;
