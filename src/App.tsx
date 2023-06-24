@@ -10,16 +10,6 @@ import NotFound from './Pages/NotFound';
 
 
 function App() {
-    // useEffect(() => {
-    //     window.addEventListener('scroll', handleScroll);
-    //     return () => {
-    //       window.removeEventListener('scroll', handleScroll); //clean up
-    //     };
-    //   }, []);
-    
-    //   const handleScroll = () => {
-    //     console.log('scrolled');
-    //   };
     return (    
         <Router basename={process.env.PUBLIC_URL}>
             <div className="App">
