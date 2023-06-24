@@ -7,6 +7,7 @@ import SquareList from '../Components/SquareList';
 import MoreButton from '../Components/MoreButton';
 
 const MovieMain = () => {
+    const [loading,setLoading] = useState<boolean>(false);
     const [totalCount,setTotalCount] = useState<number | undefined>(0);
     const [listProps,setListProps] = useState<MovieList[] | undefined>([]);
     const [currentPage,setCurrentPage] = useState<number>(1);
@@ -17,9 +18,13 @@ const MovieMain = () => {
     const navigation = useNavigate();
 
     const startApi = async (selectVal:string|undefined,inputVal:string|undefined) => {
+        setLoading(true);
         const result = await getMovieResApi(selectVal,inputVal);
-        setTotalCount(result?.TotalCount);
-        setListProps(result?.Result);
+        if(typeof(result) === 'object') {
+            setLoading(false);
+            setTotalCount(result?.TotalCount);
+            setListProps(result?.Result);
+        }
     }
 
     const submitHandler = async (e:React.FormEvent<FormSubmitProps>) => {
@@ -73,7 +78,7 @@ const MovieMain = () => {
                     <strong className='result-text'>검색결과({totalCount})</strong>
                     <hr />
                     <div className="card-wrapper">
-                        {totalCount! < 1 ? 
+                        {!loading && totalCount! < 1 ? 
                             <div className='text-wrapper'>
                                 <strong><span className='highlight'>'{context}'</span>에 대한 검색결과 없음</strong>
                                 <p>
