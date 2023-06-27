@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useEffect } from 'react'
 import './style/css/App.css';
 import Header from './Components/Header';
 import ScrollTopButton from './Components/ScrollTopButton';
@@ -10,16 +9,7 @@ import NotFound from './Pages/NotFound';
 
 
 function App() {
-    // useEffect(() => {
-    //     window.addEventListener('scroll', handleScroll);
-    //     return () => {
-    //       window.removeEventListener('scroll', handleScroll); //clean up
-    //     };
-    //   }, []);
     
-    //   const handleScroll = () => {
-    //     console.log('scrolled');
-    //   };
     return (    
         <Router>
             <div className="App">
