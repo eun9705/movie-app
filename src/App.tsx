@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useEffect } from 'react'
 import './style/css/App.css';
 import Header from './Components/Header';
 import ScrollTopButton from './Components/ScrollTopButton';

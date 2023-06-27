@@ -1,4 +1,4 @@
-import {MouseEvent} from 'react';
+import { MouseEvent } from 'react';
 import { HiArrowUp } from 'react-icons/hi';
 
 const ScrollTopButton = () => {
@@ -8,6 +8,7 @@ const ScrollTopButton = () => {
             top: 0,
             behavior: 'smooth'
         })
+        return;
     }
     return <button className="top-btn" onClick={moveTop}><HiArrowUp /></button>
 };

@@ -28,8 +28,8 @@ footer {
 }
 
 .top-btn {
-    @include position-box(fixed,$right:3rem,$bottom:3rem);width:6rem;height:6rem;border:2px solid $white;border-radius:50%;transition:.3s;
-    svg { width:3rem;height:3rem;transition:.3s; }
+    @include position-box(fixed,$right:2.5rem,$bottom:2.5rem);@include flex-box;width:5rem;height:5rem;border:2px solid $white;border-radius:50%;transition:.3s;
+    svg { width:2.5rem;height:2.5rem;transition:.3s; }
     &:hover {
         background-color:$white;
         svg { fill:$sub-color; }
@@ -49,10 +49,6 @@ footer {
     .common-btn { width:12rem; }
     footer { 
         * { font-size: 1rem; }
-    }
-    .top-btn { 
-        right: 2rem;bottom:2rem;width: 5rem;height: 5rem; 
-        svg { width:2.5rem;height:2.5rem; }
     }
 }
 
