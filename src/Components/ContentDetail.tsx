@@ -3,10 +3,10 @@ import { Link,useNavigate } from "react-router-dom";
 import { Navigation,EffectCoverflow } from 'swiper';
 import { Swiper,SwiperSlide } from "swiper/react";
 import { BsFillArrowLeftCircleFill,BsInfoCircleFill } from 'react-icons/bs';
-import { ListProps } from "../types/interface";
+import { DetailProps } from "../types/interface";
 import nonePoster from '../images/no-poster.jpg'
 
-const ContentDetail  = ({info}: ListProps) => {
+const ContentDetail  = ({info}: DetailProps) => {
     const navigation = useNavigate();
     const [viewAll,setViewAll] = useState<boolean>(false);
     return (
@@ -43,7 +43,7 @@ const ContentDetail  = ({info}: ListProps) => {
                                 })}
                             </ul>
                         </div>
-                        <button className="basic-btn" onClick={()=>{setViewAll(!viewAll)}}>{viewAll ? "닫기" : "더보기"}</button>
+                        <button className="detail-btn" onClick={()=>{setViewAll(!viewAll)}}>{viewAll ? "닫기" : "더보기"}</button>
                     </div>
                 </div> 
             </div>
@@ -51,6 +51,7 @@ const ContentDetail  = ({info}: ListProps) => {
                 <h3>줄거리</h3>
                 <hr />
                 <p>{info?.plots?.plot[0].plotText.replace(/\./gm,"\n")}</p>
+                <button className="detail-btn">{viewAll ? "닫기" : "더보기"}</button>
             </div>
             <div className="content-wrapper">
                 <h3>포스터({info?.posters.split('|').length})</h3>

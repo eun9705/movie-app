@@ -1,30 +1,14 @@
 import axios from "axios";
 import { MovieData } from "../types/interface";
 
-const errorHandler = (code:number) => {
-    switch(code) {
-        case 403:
-        case 404:
-            break;
-        case 500:
-        case 503:
-            break;
-        default:
-            break;
-    }
-}
-
 export const getMovieResApi = async (searchType:string|undefined,searchContext:string|undefined) => {
     const api_key = process.env.REACT_APP_KMDB_KEY;
-    // console.log(searchType,searchContext);
-    // return;
     try {
         const { data } = await axios.get<MovieData>(`http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&detail=Y&${searchType}=${searchContext}&ServiceKey=${api_key}&listCount=150`);
         return data.Data[0];
     }
     catch(error) {
-        //error 로직 추가 필요
-        console.log(error);
+        window.location.href = 'http://localhost:3000/warn';
     }
 }
 
@@ -35,6 +19,6 @@ export const getMovieDetail = async (id:string,seq:string) => {
         return data.Data[0];
     }
     catch(error) {
-
+        window.location.href = 'http://localhost:3000/warn';
     }
 }

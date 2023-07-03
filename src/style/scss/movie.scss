@@ -19,7 +19,7 @@
     select { width:13.2%;height:100%;padding:1rem;cursor:pointer; }
     input { width:80.6%;height:100%;padding:1rem; }
     button { 
-        @include flex-box;width:6.2%;height:100%;cursor:pointer; 
+        @include flex-box;width:6.2%;height:100%;
         svg { width:50%;height:50%; }
     }
     label { @include position-box($left:-999em); }
@@ -44,18 +44,19 @@
         }
         p { margin-top:5rem;font-size: 2rem;font-weight:500; }
     }
-    .more-btn { width:20rem;height:5rem;margin-top:10rem;border:1px solid $white;cursor: pointer; }
+    .common-btn { margin-top:10rem; }
 }
 
 //상세보기
 .detail-box {
     @include flex-box($align:flex-start);margin:10rem 0;
+    .detail-btn { padding:.7rem 1rem;border-radius:.5rem;background-color:$sub-color;font-size: 1.4rem; }
     .row-box { 
         align-items:flex-start;justify-content: flex-start;width:100%; 
         .text-wrapper { 
             @include flex-box(column,flex-start,flex-start);width: calc(100% - 22.2vw); 
             > button { 
-                @include flex-box;align-self: flex-end;height:3rem;margin-bottom:2rem;cursor: pointer;
+                @include flex-box;align-self: flex-end;height:3rem;margin-bottom:2rem;
                 svg { width:2.5rem;height:2.5rem;margin-right: 1rem; }
             }
             hr { width: 100%; }
@@ -85,7 +86,7 @@
             }
         }
         span { display:inline-block;width:8rem;color: $sub-font-color; }
-        .basic-btn { margin-left:8rem; }
+        .detail-btn { margin-left:8rem; }
     }
     .content-wrapper { 
         margin: 10rem 0;
@@ -103,13 +104,21 @@
     }
 }
 
+//잘못된 접근
+.not-found-main {
+    @include flex-box(column);height: 100vh;
+    strong { font-size: 5rem;font-weight: 900; }
+    p { margin:5rem 0 8rem;text-align: center;font-size: 2rem;font-weight: 500; }
+    .common-btn { margin:0 .5rem; }
+}
+
 @include tablet-large {
     :root {
         --cardCount:4;
     }
     
     .movie-main {
-        .main-wrapper { height:45rem; }
+        .main-wrapper { height:47rem; }
         .title-box{
             .highlight { font-size:8.5rem; }
         }
@@ -127,10 +136,10 @@
             strong,.highlight { font-size:2.5rem; }
             p { margin-top:3rem;font-size: 1.8rem; }
         }
-        .more-btn { width:18rem; }
     }
 
     .detail-box {
+        .detail-btn { font-size: 1.2rem; }
         .row-box {
             .text-wrapper { 
                 width: calc(100% - 29.8vw); 
@@ -157,6 +166,12 @@
             svg { width: 2rem;height: 2rem; }
         }
     }
+
+    .not-found-main { 
+        img { width: 20vw; }
+        strong { font-size: 3.5rem; }
+        p { font-size: 1.8rem; }
+    }
 }
 
 @include tablet-small { 
@@ -164,7 +179,7 @@
         --cardCount:3;
     }
     .movie-main {
-        .main-wrapper { height: 35rem; }
+        .main-wrapper { height: 45rem; }
         .title-box {
             .highlight { margin-top:-2rem;font-size: 6.5rem; }
         }
@@ -200,7 +215,7 @@
         --cardCount:2;
     }
     .movie-main {
-        .main-wrapper { height: 30rem; }
+        .main-wrapper { height: 40rem; }
         .title-box {
             .highlight { margin:-10px 0 5px -2px;font-size: 4rem; }
         }
@@ -219,7 +234,7 @@
             gap: 30px 1%;
             img { height: 52vw; }
         }
-        .more-btn { width:12rem;margin-top: 5rem; }
+        .common-btn { margin-top: 5rem; }
     }
     .detail-box {
         .row-box {
@@ -233,7 +248,7 @@
                 > ul { width: 20rem; }
             }
             span { width:6rem; }
-            .basic-btn { margin-left: 6rem; }
+            .detail-btn { margin-left: 6rem; }
         }
         .content-wrapper { 
             margin: 5rem 0;
@@ -243,5 +258,11 @@
             }
         }
         .link-btn { font-size: 1.4rem; }
+    }
+
+    .not-found-main { 
+        img { width: 30vw; }
+        strong { font-size: 1.8rem; }
+        p { margin:2rem 0 3rem;font-size: 1.2rem; }
     }
 }

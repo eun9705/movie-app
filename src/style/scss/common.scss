@@ -5,32 +5,48 @@ body { background-color: $main-color; }
 .container { width: 65.3vw; }
 .highlight { color: $sub-color; }
 .row-box { @include flex-box; }
-.basic-btn { padding:.7rem 1rem;border-radius:.5rem;background-color:$sub-color;font-size: 1.4rem;cursor: pointer; }
+.common-btn { 
+    width: 20rem;height: 5rem;
+    &.basic { background-color: $white;color: $sub-font-color; }
+    &.border { border: 1px solid $white;color: $white; }
+    &.highlight { background-color: $sub-color;color: $white; }
+}
 
 //header
 header { 
-    @include position-box($top:0);
-    ul { @include flex-box; }
+    @include position-box($top:0);@include flex-box($justify:space-between);width:100%;height:11rem;padding: 0 5rem;
+    img { width: 8vw; }
 }
 
 //footer
 footer { 
-    text-align:center;margin:5rem 0;
+    height:7rem;text-align:center;margin:5rem 0;
     * { font-size:1.2rem;color:$sub-font-color; }
     a {
         &:hover { text-decoration:underline; }
     }
 }
 
+.top-btn {
+    @include position-box(fixed,$right:2.5rem,$bottom:2.5rem);@include flex-box;width:5rem;height:5rem;border:2px solid $white;border-radius:50%;transition:.3s;
+    svg { width:2.5rem;height:2.5rem;transition:.3s; }
+    &:hover {
+        background-color:$white;
+        svg { fill:$sub-color; }
+    }
+}
+
 @include tablet-large {
     * { font-size: 1.4rem; }
     .container { width:75vw; }
-    .basic-btn { font-size: 1.2rem; }
     .pc-only { display:none; }
+    .common-btn { width:18rem; }
+    header { height: 8rem;padding: 0 4rem; }
 }
 
 @include tablet-small {
     * { font-size: 1.2rem; }
+    .common-btn { width:12rem; }
     footer { 
         * { font-size: 1rem; }
     }
@@ -38,4 +54,12 @@ footer {
 
 @include mobile {
     * { font-size: 1rem; }
+    header {
+        padding: 2rem;
+        img { width: 17vw; }
+    }
+    .top-btn { 
+        right: 0;bottom:0;width: 4rem;height: 4rem;background-color:$white;border-radius:0;
+        svg { width:2rem;height:2rem;fill:$sub-color; }
+    }
 }

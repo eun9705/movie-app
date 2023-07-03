@@ -46,3 +46,5 @@ table {
 a { text-decoration: none; }
 
 select,input,button { border: none;box-sizing: border-box;background-color: transparent; }
+
+button { cursor: pointer; }
