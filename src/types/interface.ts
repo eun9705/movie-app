@@ -64,7 +64,6 @@ export interface DetailProps {
 }
 
 export interface SearchFormProps {
-    submitFn: any;
     selectVal:string;
     setSelectVal:Dispatch<SetStateAction<string>>;
     inputVal:string;
