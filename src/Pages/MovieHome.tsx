@@ -6,8 +6,6 @@ const MovieHome = () => {
     const [selectVal,setSelectVal] = useState<string>('title');
     const [inputVal,setInputVal] = useState<string>('');
     
-    
-
     return (
         <div className='movie-main'>
             <div className="container">
