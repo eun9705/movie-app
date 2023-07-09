@@ -8,7 +8,7 @@ export const getMovieResApi = async (searchType:string|undefined,searchContext:s
         return data.Data[0];
     }
     catch(error) {
-        window.location.href = 'https://https://eun9705.github.io/movie-app/warn';
+        window.location.href = 'https://eun9705.github.io/movie-app/warn';
     }
 }
 
@@ -19,6 +19,6 @@ export const getMovieDetail = async (id:string,seq:string) => {
         return data.Data[0];
     }
     catch(error) {
-        window.location.href = 'https://https://eun9705.github.io/movie-app/warn';
+        window.location.href = 'https://eun9705.github.io/movie-app/warn';
     }
 }
