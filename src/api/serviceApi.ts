@@ -1,7 +1,7 @@
 import axios from "axios";
 import { MovieData } from "../types/interface";
 
-const url = '/warn';
+const url = `${process.env.PUBLIC_URL}/warn`;
 
 export const getMovieResApi = async (searchType:string|undefined,searchContext:string|undefined) => {
     const api_key = process.env.REACT_APP_KMDB_KEY;
