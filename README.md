@@ -1,7 +1,5 @@
 # Movie App
 
-[DEMO](https://eun9705.github.io/movie-app/)
-
 ![웹사이트 이미지](https://github.com/eun9705/movie-app/blob/main/thumbnail.png)
 
 ## 프로젝트 설명
