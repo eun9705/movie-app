@@ -10,7 +10,7 @@ export const getMovieResApi = async (searchType:string|undefined,searchContext:s
         return data.Data[0];
     }
     catch(error) {
-        window.location.pathname = url;
+        // window.location.pathname = url;
     }
 }
 
@@ -21,6 +21,6 @@ export const getMovieDetail = async (id:string,seq:string) => {
         return data.Data[0];
     }
     catch(error) {
-        window.location.pathname = url;
+        // window.location.pathname = url;
     }
 }
